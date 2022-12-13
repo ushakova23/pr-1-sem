@@ -69,9 +69,9 @@ Rdecart operator*=(Rdecart&lhs, const double&rhs) //оператор умнож�
 	lhs.y *= rhs;
 	return lhs;
 }
-Rdecart operator*(Rdecart lhs, const double&rhs)
+Rdecart operator*(Rdecart lhs, const double&rhs)//оператор умножения (умножение вектора на число) 
 {
-	Rdecart& res = lhs;
+	Rdecart res = lhs;
 	res = {lhs.x*rhs.x, lhs.y*rhs.y};
 	return res;
 }
@@ -81,20 +81,24 @@ Rdecart operator/=(Rdecart&lhs, const double&rhs) //оператор делен�
 	lhs.y /= rhs;
 	return lhs;
 }
-Rdecart operator/(Rdecart lhs, const double&rhs) //оператор деления
+Rdecart operator/(Rdecart lhs, const double&rhs) //оператор деления (деление вектора на число)
 {
-	Rdecart&res = lhs;
+	Rdecart res = lhs;
 	res = {lhs.x/rhs.x, lhs.y/rhs.y};
 	return res;
 }
 
+
 double Norm (const Rdecart&lhs)//функция нормирование вектора
 {
-    return (sqrt(lhs.x * lhs.x + lhs.y * lhs.y));
+    Rderact res = lhs;
+    res = {(sqrt(lhs.x * lhs.x + lhs.y * lhs.y))};
+    return res;
 }
 
 double Dot (const Rdecart&lhs, const Rdecart&rhs)//функция скалярное произведение векторов
 {
-    return (lhs.x * rhs.x + lhs.y * rhs.y);
+    Rdecart res = lhs;
+    res = {(lhs.x * rhs.x + lhs.y * rhs.y)};
+    return res;
 }
-
