@@ -38,3 +38,11 @@ Rdecart operator/(Rdecart lhs, const double& rhs);
 double norm(const Rdecart& vec);
 
 double dot(const Rdecart& lhs, const Rdecart& rhs);
+
+Rpolar operator+=(Rpolar& lhs, const Rpolar& rhs);
+
+Rpolar operator+(const Rpolar& lhs, const Rpolar& rhs);
+
+Rpolar operator-=(Rpolar& lhs, const Rpolar& rhs);
+
+Rpolar operator-(const Rpolar& lhs, const Rpolar& rhs);
