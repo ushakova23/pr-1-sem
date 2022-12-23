@@ -92,3 +92,35 @@ double Dot (const Rdecart&lhs, const Rdecart&rhs)//функция скалярн
     res = {(lhs.x * rhs.x + lhs.y * rhs.y)};
     return res;
 }
+Rpolar operator+=(Rpolar& lhs, const Rpolar& rhs) 
+{
+    Rdecart new_lhs = ToDec(lhs);
+    Rdecart new_rhs = ToDec(rhs);
+    new_lhs += new_rhs;
+    lhs = ToPol(new_lhs);
+    return lhs;
+}
+
+Rpolar operator+(const Rpolar& lhs, const Rpolar& rhs) 
+{
+    Rpolar res = lhs;
+    res = {lhs.x+rhs.x, lhs.y+rhs.y};
+    return res;
+}
+
+Rpolar operator-=(Rpolar& lhs, const Rpolar& rhs) 
+{
+    Rdecart new_lhs = ToDec(lhs);
+    Rdecart new_rhs = ToDec(rhs);
+    new_lhs -= new_rhs;
+    lhs = ToPol(new_lhs);
+    return lhs;
+}
+
+Rpolar operator-(const Rpolar& lhs, const Rpolar& rhs) 
+{
+    Rpolar res = lhs;
+    res = {lhs.x-rhs.x, lhs.y-rhs.y};
+    return res;
+}
+
